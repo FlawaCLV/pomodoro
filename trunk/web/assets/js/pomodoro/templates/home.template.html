@@ -1,0 +1,41 @@
+<div id="sounds">
+    <div id="start" class="jp-jplayer"></div>
+    <div id="stop" class="jp-jplayer"></div>
+</div>
+<div id="actions">
+    <div ng-click="toggleSound();"><i ng-class="{'mdi-av-volume-up':$root.sound, 'mdi-av-volume-off':!$root.sound}"></i></div>
+</div>
+<div class="t">
+    <div class="tc">
+        <h1>The Pomodoro team work</h1>
+        <div id="login" ng-if="!$root._user">
+            <div>
+                <input type="text" placeholder="Your name..." ng-model="login.username">
+            </div>
+            <div>
+                <button class="btn btn-default btn-raised btn-fab" ng-click="doLogin();">GO</button>
+            </div>
+        </div>
+        <div id="timer" ng-if="$root._user">
+            <div class="text-center">
+                <div class="container ib">
+                    <div id="activeBorder" class="active-border">
+                        <div class="circle">
+                            <span class="prec 270">{{ timeout.minutes }} : {{ timeout.seconds }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-default btn-raised btn-fab" title="Alt + P" data-placement="bottom" data-toggle="tooltip" ng-click="setPomodoro(25);">P</button>
+            <button class="btn btn-default btn-raised btn-fab" title="Alt + S" data-placement="bottom" data-toggle="tooltip" ng-click="setPomodoro(5);">S</button>
+            <button class="btn btn-default btn-raised btn-fab" title="Alt + L" data-placement="bottom" data-toggle="tooltip" ng-click="setPomodoro(20);">L</button>
+        </div>
+    </div>
+</div>
+<div class="users text-left">
+    <div ng-repeat="user in $root._users">
+        <div class="user" ng-if="user.id != $root._user.id">
+            <div><i class="mdi-social-person ib"></i> {{ user.username }} <span pomodoro="{{ user.pomodoro }}"></span></div>
+        </div>
+    </div>
+</div>

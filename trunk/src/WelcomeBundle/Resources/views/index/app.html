@@ -1,0 +1,35 @@
+{% extends '../layout.html' %}
+
+{% block title %}{% parent %}{% endblock %}
+
+{% block body_attr %}ng-app="Pomodoro"{% endblock %}
+
+{% block pre_js %}
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '944530295607472',
+                xfbml      : true,
+                version    : 'v2.4'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div id="main" ui-view></div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        var socket = io.connect();
+    </script>
+{% endblock %}

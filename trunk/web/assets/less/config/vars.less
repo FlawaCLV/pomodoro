@@ -1,0 +1,80 @@
+
+@black: #000;
+@grey: #eee;
+@greyLight: #f6f6f6;
+@greyMedium: #999;
+@greyDark: #666;
+@white: #fff;
+
+@red: #FF4444;
+@red-darken: #F21515;
+@red-lighten: #FF6767;
+@red-lightener: #FF9292;
+
+@green: #B4EE3F;
+@green-darken: #9DE114;
+@green-lighten: #C2F262;
+@green-lightener: #D4F78D;
+
+@border: rgba(0,0,0,.1);
+@text: #333;
+
+@lg: ~"only screen and (min-width: 1200px)";
+@md: ~"only screen and (max-width: 992px)";
+@sm: ~"only screen and (max-width: 768px)";
+
+.font(@size, @weight, @color) {
+  font-size: @size;
+  line-height: @size;
+  font-weight: @weight;
+  color: @color;
+}
+
+.background(@position, @repeat, @size) {
+  background-position: @position;
+  background-repeat: @repeat;
+  background-size: @size;
+}
+
+.box-shadow() {
+  box-shadow: 0 1px 6px rgba(0,0,0,.12),0 1px 6px rgba(0,0,0,.12);
+}
+.box-shadow-map() {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.box-shadow-map-xs() {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.color-black-light() {
+  color: rgba(0,0,0,.54);
+}
+
+.color-black-dark() {
+  color: rgba(0,0,0,.87);
+}
+
+.black(@opacity) {
+  background-color: rgba(0,0,0,@opacity);
+}
+
+.transition(@trans) {
+  -webkit-transition: @trans;
+  -moz-transition: @trans;
+  -o-transition: @trans;
+  transition: @trans;
+}
+
+.transform(@trans) {
+  -webkit-transform: @trans;
+  -moz-transform: @trans;
+  -o-transform: @trans;
+  transform: @trans;
+}
+
+.animation(@trans) {
+  -webkit-animation: @trans;
+  -moz-animation: @trans;
+  -o-animation: @trans;
+  animation: @trans;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Pomodoro{% endblock %}</title>
+    <meta name="description" content="{% block description %}Pomodoro{% endblock %}" />
+    <meta name="keywords" content="{% block keywords %}Pomodoro{% endblock %}" />
+    <meta name="Subject" content="{% block subject %}Pomodoro{% endblock %}">
+    <meta name="Copyright" content="Hugo Pozzoli">
+    <meta name="Author" content="Hugo Pozzoli">
+    <meta name="Identifier-Url" content="http://www.pmdr.xyz">
+    <meta name="Reply-To" content="contact@pmdr.xyz">
+    <meta name="Revisit-After" content="7 days">
+    <meta name="Robots" content="all">
+    <meta name="Rating" content="general">
+    <meta name="Distribution" content="global">
+    <meta property="og:title" content="{% block og_title %}Pomodoro{% endblock %} | Pomodoro" />
+    <meta property="og:description" content="{% block og_description %}{% endblock %}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.pmdr.xyz/" />
+    <meta property="og:image" content="http://www.pmdr.xyz/assets/img/meta-image.png" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="/web/assets/dist/main.min.css"/>
+    <link rel="icon" type="image/x-icon" href="/web/favicon.png" />
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+</head>
+<body class="{% block body_class %}{% endblock %}" {% block body_attr %}{% endblock %}>
+
+{% block pre_js %}{% endblock %}
+
+{% block body %}{% endblock %}
+
+</body>
+<script type="text/javascript" src="/web/assets/dist/main.min.js"></script>
+{% block js %}{% endblock %}
+<!--Start of Google Analytics-->
+<script type="text/javascript">
+    // Google Analytics
+</script>
+<!--End of Google Analytics-->
+</html>
