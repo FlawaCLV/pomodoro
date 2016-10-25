@@ -1,2 +1,2 @@
-# pomodoro
+# Pomodoro
 Collaborative pomodoro
